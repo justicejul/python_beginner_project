@@ -206,34 +206,34 @@ thePrivileges.show_privileges()
 
 
 
-# # class Privileges:
+# class Privileges:
 
-# #     def __init__(self, *privileges):
+#     def __init__(self, *privileges):
 
-# #         self.privileges = privileges
-
-
-# #     def show_privileges(self):
-# #         for privilege in self.privileges:
-# #             print(privilege) 
-
-
-# class Admin(User):
-
-#     def __init__(self,  first_name, last_name, age, hobbies, *privileges):
-
-#         # super().__init__(self, first_name, last_name, age, hobbies)
-        
 #         self.privileges = privileges
+
 
 #     def show_privileges(self):
 #         for privilege in self.privileges:
-#             print(privilege)
+#             print(privilege) 
 
 
-# User = Admin("Justice", "Julius", 18, "Food", "can add post", "can delete post", "can ban user")
+class Admin(User):
+
+    def __init__(self,  first_name, last_name, age, hobbies, *privileges):
+
+        # super().__init__(self, first_name, last_name, age, hobbies)
+        
+        self.privileges = privileges
+
+    def show_privileges(self):
+        for privilege in self.privileges:
+            print(privilege)
+
+
+User = Admin("Justice", "Julius", 18, "Food", "can add post", "can delete post", "can ban user")
+User.show_privileges()
 # User.show_privileges()
-# # User.show_privileges()
 
 
 
